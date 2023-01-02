@@ -21,7 +21,28 @@ import java.util.Map;
  */
 public class leetCode0001两数之和 {
     class Solution {
-        public int[] twoSum(int[] nums, int target) {
+        /**
+         * 暴力枚举法
+         * 时间复杂度：O(N^2)
+         * 空间复杂度：O(1)
+         */
+        public int[] twoSum01(int[] nums, int target) {
+            for (int i = 0; i < nums.length - 1; i++) {
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
+            return new int[]{-1, -1};
+        }
+
+        /**
+         * 哈希表
+         * 时间复杂度：O(N)
+         * 空间复杂度：O(N)
+         */
+        public int[] twoSum02(int[] nums, int target) {
             Map<Integer, Integer> map = new HashMap<>();
             for (int i = 0; i < nums.length; i++) {
                 int secondNum = target - nums[i];
@@ -36,26 +57,16 @@ public class leetCode0001两数之和 {
     }
 
     @Test
-    public void test1() {
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
+    public void testTwoSum() {
         Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
-    }
+        System.out.println("方法一：暴力法");
+        System.out.println(Arrays.toString(solution.twoSum01(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println(Arrays.toString(solution.twoSum01(new int[]{3, 2, 4}, 6)));
+        System.out.println(Arrays.toString(solution.twoSum01(new int[]{3, 3}, 6)));
 
-    @Test
-    public void test2() {
-        int[] nums = {3, 2, 4};
-        int target = 6;
-        Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
-    }
-
-    @Test
-    public void test3() {
-        int[] nums = {3, 3};
-        int target = 6;
-        Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
+        System.out.println("方法二：哈希表");
+        System.out.println(Arrays.toString(solution.twoSum02(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println(Arrays.toString(solution.twoSum02(new int[]{3, 2, 4}, 6)));
+        System.out.println(Arrays.toString(solution.twoSum02(new int[]{3, 3}, 6)));
     }
 }

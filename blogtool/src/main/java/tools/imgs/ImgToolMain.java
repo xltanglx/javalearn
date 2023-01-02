@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class ImgToolMain {
     @Test
     public void testReplaceSingleImgNameTool() {
-        String blogPath = "E:\\学习\\MyBlog\\CDN\\blog\\对volatile的一些理解.md";
+        String blogPath = "E:\\学习\\MyBlog\\CDN\\blog\\JUC下CountDownLatch、CyclicBarrier、Semaphore的简单使用.md";
         ImgTool.replaceImgUrlFromPicBedtoCDN(blogPath);
     }
 
