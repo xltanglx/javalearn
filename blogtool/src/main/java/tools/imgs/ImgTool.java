@@ -149,7 +149,7 @@ public class ImgTool {
      * @return String
      */
     private static String getImgNameByImgUrl(String imgUrl) {
-        String[] split = imgUrl.split("/");
+        String[] split = imgUrl.split("[/\\\\]");
         assert split.length > 0;
         return split[split.length - 1].replaceAll("\"", "");
     }
