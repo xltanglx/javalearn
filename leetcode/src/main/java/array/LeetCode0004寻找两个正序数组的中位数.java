@@ -1,9 +1,9 @@
-package sort;
+package array;
 
 import org.junit.Test;
 
 /**
- * 给定两个大小分别为 m 和 n 的正序（从小到大）数组nums1 和nums2。请你找出并返回这两个正序数组的 中位数 。
+ * 给定两个大小分别为 m 和 n 的正序（从小到大）数组nums1 和nums2。请你找出并返回这两个正序数组的 中位数。
  * <p>
  * 算法的时间复杂度应该为 O(log (m+n)) 。
  * </p>
@@ -14,7 +14,7 @@ import org.junit.Test;
  * @author txl
  * @date 2023/1/2 21:30
  */
-public class leetCode0004寻找两个正序数组的中位数 {
+public class LeetCode0004寻找两个正序数组的中位数 {
     class Solution {
         /**
          * 暴力枚举法
@@ -26,18 +26,10 @@ public class leetCode0004寻找两个正序数组的中位数 {
          * @return
          */
         public double findMedianSortedArrays01(int[] nums1, int[] nums2) {
-            if (nums1 == null && nums2 == null) {
-                return 0;
-            } else if (nums1 == null || nums1.length == 0) {
-                return getArrayMid(nums2);
-            } else if (nums2 == null || nums2.length == 0) {
-                return getArrayMid(nums1);
-            }
-
             int len1 = nums1.length, len2 = nums2.length;
             int[] sortArray = new int[len1 + len2];
             // 求中位数，那么排序到中间位置即可，无需全部有序
-            for (int i = 0, j = 0, index = 0, targetIndex = (len1 + len2) / 2; index <= targetIndex; ) {
+            for (int i = 0, j = 0, index = 0; index <= (len1 + len2) / 2; ) {
                 if (i < len1 && j < len2) {
                     if (nums1[i] <= nums2[j]) {
                         sortArray[index++] = nums1[i++];

@@ -1,4 +1,4 @@
-package hashtable;
+package array;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ import java.util.Map;
  * @author txl
  * @date 2023/1/2 11:29
  */
-public class leetCode0001两数之和 {
+public class LeetCode0001两数之和 {
     class Solution {
         /**
          * 暴力枚举法
@@ -46,7 +46,7 @@ public class leetCode0001两数之和 {
             Map<Integer, Integer> map = new HashMap<>();
             for (int i = 0; i < nums.length; i++) {
                 int secondNum = target - nums[i];
-                if (map.get(secondNum) != null) {
+                if (map.containsKey(secondNum)) {
                     return new int[]{map.get(secondNum), i};
                 } else {
                     map.put(nums[i], i);

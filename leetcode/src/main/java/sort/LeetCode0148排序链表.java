@@ -1,6 +1,6 @@
 package sort;
 
-import common.ListNode;
+import commons.ListNode;
 
 /**
  * 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
@@ -12,7 +12,7 @@ import common.ListNode;
  * @author txl
  * @date 2023/1/2 11:53
  */
-public class leetCode0148排序链表 {
+public class LeetCode0148排序链表 {
     class Solution {
         public ListNode sortList(ListNode head) {
             return null;
