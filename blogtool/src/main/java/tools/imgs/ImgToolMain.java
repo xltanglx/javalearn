@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class ImgToolMain {
     @Test
     public void testReplaceSingleImgNameTool() {
-        String blogPath = "E:\\学习\\MyBlog\\CDN\\blog\\JVM 垃圾收集器.md";
+        String blogPath = "E:\\学习\\MyBlog\\CDN\\blog\\MySQL 性能调优.md";
         ImgTool.replaceImgUrlFromPicBedtoCDN(blogPath);
     }
 
